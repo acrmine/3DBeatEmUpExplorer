@@ -26,7 +26,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_o3cl4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52303, 1.06831, -0.0656519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.59387, 8.389508, -0.0656519)
 
 [node name="BowlArea" parent="." instance=ExtResource("3_fi62q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)

@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgfj2j20lkpkg"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e0qj3"]
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ltjrk"]
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02so3"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_76l5w"]
+material = SubResource("StandardMaterial3D_02so3")
+radius = 0.2
+height = 0.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vfq0u"]
+radius = 0.3
+
+[node name="Shield_Enemy" type="Node3D"]
+
+[node name="Armor" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Armor"]
+mesh = SubResource("CylinderMesh_e0qj3")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armor"]
+shape = SubResource("CylinderShape3D_ltjrk")
+
+[node name="WeakSpot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WeakSpot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50732267, 0)
+mesh = SubResource("SphereMesh_76l5w")
+
+[node name="Area3D" type="Area3D" parent="WeakSpot"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WeakSpot/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_vfq0u")
