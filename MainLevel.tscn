@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://sgthjs3c3wkf"]
+[gd_scene load_steps=7 format=3 uid="uid://sgthjs3c3wkf"]
 
-[ext_resource type="PackedScene" uid="uid://b0tyruokxhbm2" path="res://player.tscn" id="2_o3cl4"]
-[ext_resource type="PackedScene" uid="uid://ch10impskcl3r" path="res://Prefabs/bowl_area.tscn" id="3_fi62q"]
+[ext_resource type="PackedScene" uid="uid://b0tyruokxhbm2" path="res://Prefabs/Player/player.tscn" id="2_o3cl4"]
+[ext_resource type="PackedScene" uid="uid://ch10impskcl3r" path="res://Prefabs/Level Components/bowl_area.tscn" id="3_fi62q"]
+[ext_resource type="PackedScene" uid="uid://cgfj2j20lkpkg" path="res://Prefabs/Enemies/shield_enemy.tscn" id="3_rlx2o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rj4so"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -30,3 +31,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.59387, 8.389508, -0.06565
 
 [node name="BowlArea" parent="." instance=ExtResource("3_fi62q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+
+[node name="Shield_Enemy" parent="." instance=ExtResource("3_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.154743, 7.280444, 0.55051327)

@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0tyruokxhbm2"]
+[gd_scene load_steps=6 format=3 uid="uid://b0tyruokxhbm2"]
 
-[ext_resource type="Script" uid="uid://nv1jqrr6761j" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://nv1jqrr6761j" path="res://Prefabs/Player/player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://dr2ggeqlmkpfp" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/orange/texture_09.png" id="2_hnwp3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sysjd"]
+albedo_texture = ExtResource("2_hnwp3")
 
 [sub_resource type="SphereMesh" id="SphereMesh_onrkg"]
 
@@ -9,10 +13,11 @@ points = PackedVector3Array(0.457871, 0.198079, 0.0157824, -0.48874, -0.0916874,
 
 [node name="PlayerRoot" type="Node3D"]
 
-[node name="Player" type="RigidBody3D" parent="."]
+[node name="Player" type="RigidBody3D" parent="." groups=["Player"]]
 script = ExtResource("1_4flbx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+material_override = SubResource("StandardMaterial3D_sysjd")
 mesh = SubResource("SphereMesh_onrkg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
