@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgfj2j20lkpkg"]
+[gd_scene load_steps=7 format=3 uid="uid://cgfj2j20lkpkg"]
+
+[ext_resource type="Script" uid="uid://427g1gew7q7h" path="res://Prefabs/Enemies/enemy_weakspot.gd" id="1_g7ye6"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_e0qj3"]
 height = 1.0
@@ -35,6 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50732267, 0)
 mesh = SubResource("SphereMesh_76l5w")
 
 [node name="Area3D" type="Area3D" parent="WeakSpot"]
+script = ExtResource("1_g7ye6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WeakSpot/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
