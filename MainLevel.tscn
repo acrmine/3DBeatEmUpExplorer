@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://sgthjs3c3wkf"]
+[gd_scene load_steps=6 format=3 uid="uid://sgthjs3c3wkf"]
 
-[ext_resource type="Texture2D" uid="uid://d3d3jxrpqg5no" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/dark/texture_12.png" id="1_jq6gy"]
 [ext_resource type="PackedScene" uid="uid://b0tyruokxhbm2" path="res://player.tscn" id="2_o3cl4"]
+[ext_resource type="PackedScene" uid="uid://ch10impskcl3r" path="res://Prefabs/bowl_area.tscn" id="3_fi62q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rj4so"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -16,15 +16,6 @@ sky = SubResource("Sky_jq6gy")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3cl4"]
-albedo_texture = ExtResource("1_jq6gy")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_fi62q"]
-size = Vector2(10, 10)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fi62q"]
-data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
-
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -34,14 +25,8 @@ environment = SubResource("Environment_o3cl4")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_o3cl4")
-mesh = SubResource("PlaneMesh_fi62q")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_fi62q")
-
 [node name="Player" parent="." instance=ExtResource("2_o3cl4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52303, 1.06831, -0.0656519)
+
+[node name="BowlArea" parent="." instance=ExtResource("3_fi62q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)

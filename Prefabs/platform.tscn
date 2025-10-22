@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvw3vypfoycoh"]
+
+[ext_resource type="Texture2D" uid="uid://d3d3jxrpqg5no" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/dark/texture_12.png" id="1_c7tdt"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fi62q"]
+data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3cl4"]
+albedo_texture = ExtResource("1_c7tdt")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fi62q"]
+size = Vector2(10, 10)
+
+[node name="Platform" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_fi62q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_o3cl4")
+mesh = SubResource("PlaneMesh_fi62q")
+skeleton = NodePath("../..")
