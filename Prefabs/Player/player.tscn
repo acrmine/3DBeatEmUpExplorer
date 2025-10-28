@@ -23,11 +23,14 @@ mesh = SubResource("SphereMesh_onrkg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("ConvexPolygonShape3D_i3pqv")
 
-[node name="TwistPivot" type="Node3D" parent="Player"]
+[node name="TwistPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0.5, 0)
+top_level = true
 
-[node name="PitchPivot" type="Node3D" parent="Player/TwistPivot"]
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0.5, 0)
+top_level = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 1.25956, 2.94501)
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.98480785, 0.17364796, 0, -0.17364796, 0.98480785, 0, 1.2595599, 2.9450097)
 top_level = true
