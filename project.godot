@@ -23,6 +23,7 @@ window/size/viewport_height=1080
 [global_group]
 
 Player=""
+GroundObjects="any object the player can interact with like ground"
 
 [input]
 

@@ -29,7 +29,7 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("2_o3cl4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.59387, 8.389508, -0.0656519)
 
-[node name="BowlArea" parent="." instance=ExtResource("3_fi62q")]
+[node name="BowlArea" parent="." groups=["GroundObjects"] instance=ExtResource("3_fi62q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
 
 [node name="Shield_Enemy" parent="." instance=ExtResource("3_rlx2o")]

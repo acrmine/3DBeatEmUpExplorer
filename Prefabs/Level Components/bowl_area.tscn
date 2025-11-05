@@ -42,11 +42,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_whpuc")
 
-[node name="BowlArea" type="Node3D"]
+[node name="BowlArea" type="Node3D" groups=["GroundObjects"]]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["GroundObjects"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["GroundObjects"]]
 transform = Transform3D(5.4870343, 0, 0, 0, 1.827361, 0, 0, 0, 5.4870343, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_68rx0")
 
