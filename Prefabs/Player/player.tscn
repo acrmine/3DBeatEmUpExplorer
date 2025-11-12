@@ -33,7 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9961948, 0.08715568, 0, -0.08715568, 0.996
 [node name="PitchPivot" type="Node3D" parent="TwistPivot"]
 
 [node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.9961945, 0.08715555, 0, -0.08715555, 0.9961945, 0, 0.49999502, 3.000002)
+transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715556, 0, -0.08715556, 0.9961947, 0, 0.383817, 4.327924)
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 hit_from_inside = true

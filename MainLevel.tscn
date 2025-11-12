@@ -36,32 +36,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
 [node name="Shield_Enemy" parent="." instance=ExtResource("3_rlx2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.154743, 7.280444, 0.55051327)
 
-[node name="PhysicsBox" parent="." instance=ExtResource("4_rlx2o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.478916, 7.985868, -3.4624956)
+[node name="PhysicsBoxes" type="Node" parent="."]
 
-[node name="PhysicsBox2" parent="." instance=ExtResource("4_rlx2o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.03298, 7.7313128, -4.6400642)
+[node name="PhysicsBox" parent="PhysicsBoxes" instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.478916, 7.985868, -3.6657164)
 
-[node name="PhysicsBox3" parent="." instance=ExtResource("4_rlx2o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.724514, 7.730839, -2.049687)
+[node name="PhysicsBox2" parent="PhysicsBoxes" instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.03298, 7.7313128, -4.843285)
 
-[node name="PhysicsBox4" parent="." instance=ExtResource("4_rlx2o")]
+[node name="PhysicsBox3" parent="PhysicsBoxes" instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.724514, 7.730839, -2.2529078)
+
+[node name="PhysicsBox4" parent="PhysicsBoxes" instance=ExtResource("4_rlx2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.290411, 7.734928, -4.898814)
 
-[node name="PhysicsBox5" parent="." instance=ExtResource("4_rlx2o")]
+[node name="PhysicsBox5" parent="PhysicsBoxes" instance=ExtResource("4_rlx2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.889275, 7.7401247, -5.3115644)
 
-[node name="PhysicsBox6" parent="." instance=ExtResource("4_rlx2o")]
+[node name="PhysicsBox6" parent="PhysicsBoxes" instance=ExtResource("4_rlx2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.588177, 7.74137, -5.3243484)
 
-[node name="PhysicsBox7" parent="." instance=ExtResource("4_rlx2o")]
+[node name="PhysicsBox7" parent="PhysicsBoxes" instance=ExtResource("4_rlx2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.258614, 7.742647, -5.303224)
 
-[node name="PhysicsBox8" parent="." instance=ExtResource("4_rlx2o")]
+[node name="PhysicsBox8" parent="PhysicsBoxes" instance=ExtResource("4_rlx2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.230865, 8.76667, -5.3445234)
 
-[node name="PhysicsBox9" parent="." instance=ExtResource("4_rlx2o")]
+[node name="PhysicsBox9" parent="PhysicsBoxes" instance=ExtResource("4_rlx2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.903118, 8.751427, -5.3421326)
 
-[node name="PhysicsBox10" parent="." instance=ExtResource("4_rlx2o")]
+[node name="PhysicsBox10" parent="PhysicsBoxes" instance=ExtResource("4_rlx2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.543283, 9.856209, -5.3612175)

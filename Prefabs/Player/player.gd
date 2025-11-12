@@ -1,7 +1,7 @@
 extends RigidBody3D
 
 var JUMP_VELOCITY := 400.0
-var DIVE_VELOCITY := 600.0
+var DIVE_VELOCITY := 50.0
 
 var mouseSensitivity := 0.005
 var twistInput = 0.0
@@ -12,9 +12,20 @@ var touchingGround: bool = false
 var diving: bool = false
 
 @onready var player_mesh := $MeshInstance3D
+@onready var player_mesh_mat: Material = player_mesh.get_surface_override_material(0)
 @onready var player_camera := $"../TwistPivot/PitchPivot/Camera3D"
 @onready var twist_pivot := $"../TwistPivot"
 @onready var pitch_pivot := $"../TwistPivot/PitchPivot"
+
+
+func startDiving() -> void:
+	if !diving:
+		diving = true
+
+
+func stopDiving() -> void:
+	if diving:
+		diving = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -30,10 +41,13 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	touchingGround = false
+	if touchingGround:
+		touchingGround = false
 	for node in get_colliding_bodies():
 		if node.is_in_group("GroundObjects"):
-			touchingGround = true
+			if !touchingGround:
+				touchingGround = true
+			startDiving()
 			break
 
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -41,6 +55,9 @@ func _process(delta: float) -> void:
 	
 	# Apply calculated input forces
 	apply_central_force(direction *  1200.0 * delta)
+	
+	if diving:
+		apply_central_force(Vector3.DOWN * DIVE_VELOCITY)
 	
 	# Apply camera rotation if any was added
 	twist_pivot.rotate_y(twistInput)
@@ -69,5 +86,7 @@ func _input(event: InputEvent) -> void:
 		apply_central_force(terrainNormal * JUMP_VELOCITY)
 	
 	if event is InputEventKey and event.is_action_pressed("dive") and !touchingGround:
-		apply_central_force(Vector3.DOWN * DIVE_VELOCITY)
-			
+		startDiving()
+	else:
+		stopDiving()
+		
