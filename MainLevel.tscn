@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://sgthjs3c3wkf"]
+[gd_scene load_steps=8 format=3 uid="uid://sgthjs3c3wkf"]
 
 [ext_resource type="PackedScene" uid="uid://b0tyruokxhbm2" path="res://Prefabs/Player/player.tscn" id="2_o3cl4"]
 [ext_resource type="PackedScene" uid="uid://ch10impskcl3r" path="res://Prefabs/Level Components/bowl_area.tscn" id="3_fi62q"]
 [ext_resource type="PackedScene" uid="uid://cgfj2j20lkpkg" path="res://Prefabs/Enemies/shield_enemy.tscn" id="3_rlx2o"]
+[ext_resource type="PackedScene" uid="uid://c2ajs8454ttql" path="res://Prefabs/Level Components/physics_box.tscn" id="4_rlx2o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rj4so"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -29,8 +30,38 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("2_o3cl4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.59387, 8.389508, -0.0656519)
 
-[node name="BowlArea" parent="." groups=["GroundObjects"] instance=ExtResource("3_fi62q")]
+[node name="BowlArea" parent="." instance=ExtResource("3_fi62q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
 
 [node name="Shield_Enemy" parent="." instance=ExtResource("3_rlx2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.154743, 7.280444, 0.55051327)
+
+[node name="PhysicsBox" parent="." instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.478916, 7.985868, -3.4624956)
+
+[node name="PhysicsBox2" parent="." instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.03298, 7.7313128, -4.6400642)
+
+[node name="PhysicsBox3" parent="." instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.724514, 7.730839, -2.049687)
+
+[node name="PhysicsBox4" parent="." instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.290411, 7.734928, -4.898814)
+
+[node name="PhysicsBox5" parent="." instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.889275, 7.7401247, -5.3115644)
+
+[node name="PhysicsBox6" parent="." instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.588177, 7.74137, -5.3243484)
+
+[node name="PhysicsBox7" parent="." instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.258614, 7.742647, -5.303224)
+
+[node name="PhysicsBox8" parent="." instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.230865, 8.76667, -5.3445234)
+
+[node name="PhysicsBox9" parent="." instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.903118, 8.751427, -5.3421326)
+
+[node name="PhysicsBox10" parent="." instance=ExtResource("4_rlx2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.543283, 9.856209, -5.3612175)

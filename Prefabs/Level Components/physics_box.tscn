@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2ajs8454ttql"]
+
+[ext_resource type="Texture2D" uid="uid://5gftwvl0m6bb" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/green/texture_09.png" id="1_6yneg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfc8r"]
+albedo_texture = ExtResource("1_6yneg")
+
+[sub_resource type="BoxMesh" id="BoxMesh_bipuc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0rm3b"]
+
+[node name="PhysicsBox" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+material_override = SubResource("StandardMaterial3D_hfc8r")
+mesh = SubResource("BoxMesh_bipuc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_0rm3b")

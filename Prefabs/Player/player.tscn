@@ -27,11 +27,6 @@ debug_color = Color(0.48077428, 0.43672925, 1, 1)
 remote_path = NodePath("../../TwistPivot")
 update_rotation = false
 
-[node name="RayCast3D" type="RayCast3D" parent="Player"]
-target_position = Vector3(0, -0.7, 0)
-hit_from_inside = true
-debug_shape_thickness = 5
-
 [node name="TwistPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9961948, 0.08715568, 0, -0.08715568, 0.9961948, 0, 0, 0)
 
@@ -39,3 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9961948, 0.08715568, 0, -0.08715568, 0.996
 
 [node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.9961945, 0.08715555, 0, -0.08715555, 0.9961945, 0, 0.49999502, 3.000002)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+hit_from_inside = true
+debug_shape_thickness = 5
